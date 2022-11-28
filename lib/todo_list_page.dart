@@ -17,7 +17,7 @@ class TodoListPage extends ConsumerWidget {
           return ListView.builder(
             itemCount: todoLists.length,
             itemBuilder: (BuildContext context, int index) {
-              return Text(todoLists[index]['description']);
+              return Text(todoLists[index].description);
             },
           );
         },
