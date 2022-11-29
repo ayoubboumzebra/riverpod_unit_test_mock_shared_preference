@@ -5,7 +5,6 @@ import 'package:fltr_mock_sharedpreference/todo_list_provider.dart';
 import 'package:fltr_mock_sharedpreference/todo_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-// import 'package:mockito/mockito.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -17,11 +16,14 @@ class Listener<T> extends Mock {
 }
 
 void main() {
+  
   setUpAll(() {
     registerFallbackValue(const AsyncData<List<TodoModel>>([]));
   });
+  
   test('get todo list', () async {
     final mockSharedPreferences = MockSharedPreferences();
+    
     List<TodoModel> data = [
       const TodoModel(
           id: "0", description: "Create todo list app", priority: "high"),
